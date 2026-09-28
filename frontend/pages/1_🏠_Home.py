@@ -9,16 +9,16 @@ st.set_page_config(page_title="Home | E-Gov Portal", page_icon="🏠", layout="w
 st.markdown("""
 <style>
     .feature-card {
-        background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
-        border: 1px solid #e5e7eb;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        border: 1px solid #475569;
         border-radius: 12px;
         padding: 1.5rem;
         text-align: center;
         min-height: 180px;
     }
     .feature-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .feature-title { font-size: 1.1rem; font-weight: 600; color: #1a1a2e; }
-    .feature-desc { font-size: 0.9rem; color: #6b7280; margin-top: 0.5rem; }
+    .feature-title { font-size: 1.1rem; font-weight: 600; color: #e2e8f0; }
+    .feature-desc { font-size: 0.9rem; color: #94a3b8; margin-top: 0.5rem; }
 </style>
 """, unsafe_allow_html=True)
 

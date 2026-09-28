@@ -34,45 +34,47 @@ st.markdown("""
 
     .hero-subtitle {
         font-size: 1.1rem;
-        color: #6b7280;
+        color: #9ca3af;
         text-align: center;
         margin-bottom: 2rem;
     }
 
-    /* Card styling */
+    /* Card styling — dark mode compatible */
     .stat-card {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        border: 1px solid #475569;
         border-radius: 12px;
         padding: 1.5rem;
         text-align: center;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         transition: transform 0.2s;
     }
 
     .stat-card:hover {
         transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.4);
     }
 
     .stat-number {
         font-size: 2rem;
         font-weight: 700;
-        color: #1a1a2e;
+        color: #e2e8f0;
     }
 
     .stat-label {
         font-size: 0.9rem;
-        color: #6b7280;
+        color: #94a3b8;
         margin-top: 0.3rem;
     }
 
-    /* Service card */
+    /* Service card — dark mode */
     .service-card {
-        background: white;
-        border: 1px solid #e5e7eb;
+        background: #1e293b;
+        border: 1px solid #475569;
         border-radius: 12px;
         padding: 1.5rem;
         margin-bottom: 1rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     /* Status badge */
@@ -84,10 +86,10 @@ st.markdown("""
         font-weight: 600;
     }
 
-    .status-submitted { background: #dbeafe; color: #1e40af; }
-    .status-review { background: #fef3c7; color: #92400e; }
-    .status-approved { background: #d1fae5; color: #065f46; }
-    .status-rejected { background: #fee2e2; color: #991b1b; }
+    .status-submitted { background: #1e3a5f; color: #60a5fa; }
+    .status-review { background: #422006; color: #fbbf24; }
+    .status-approved { background: #064e3b; color: #34d399; }
+    .status-rejected { background: #450a0a; color: #f87171; }
 
     /* Footer */
     .footer {
@@ -95,16 +97,15 @@ st.markdown("""
         padding: 2rem 0;
         color: #9ca3af;
         font-size: 0.85rem;
-        border-top: 1px solid #e5e7eb;
+        border-top: 1px solid #374151;
         margin-top: 3rem;
     }
 
-    /* Login form */
+    /* Login form — use Streamlit's native dark styling */
     div[data-testid="stForm"] {
-        background: white;
         padding: 2rem;
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        border: 1px solid #374151;
     }
 </style>
 """, unsafe_allow_html=True)
