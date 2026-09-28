@@ -27,7 +27,10 @@ def api_get(endpoint: str, params: dict = None):
             st.error("Session expired. Please login again.")
             return None
         else:
-            detail = resp.json().get("detail", "Unknown error")
+            try:
+                detail = resp.json().get("detail", "Unknown error")
+            except Exception:
+                detail = resp.text[:200] or f"HTTP {resp.status_code}"
             st.error(f"Error: {detail}")
             return None
     except requests.ConnectionError:
@@ -53,7 +56,10 @@ def api_post(endpoint: str, data: dict = None, files: dict = None):
             st.error("Session expired. Please login again.")
             return None
         else:
-            detail = resp.json().get("detail", "Unknown error")
+            try:
+                detail = resp.json().get("detail", "Unknown error")
+            except Exception:
+                detail = resp.text[:200] or f"HTTP {resp.status_code}"
             st.error(f"Error: {detail}")
             return None
     except requests.ConnectionError:
@@ -68,7 +74,10 @@ def api_put(endpoint: str, data: dict = None):
         if resp.status_code == 200:
             return resp.json()
         else:
-            detail = resp.json().get("detail", "Unknown error")
+            try:
+                detail = resp.json().get("detail", "Unknown error")
+            except Exception:
+                detail = resp.text[:200] or f"HTTP {resp.status_code}"
             st.error(f"Error: {detail}")
             return None
     except requests.ConnectionError:
