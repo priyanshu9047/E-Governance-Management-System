@@ -21,7 +21,17 @@ if not services:
     st.stop()
 
 service_map = {f"{s['name']} ({s.get('department_name', '')}) — ₹{s['fee']:.2f}": s for s in services}
-selected_name = st.selectbox("🏷️ Select a Service", list(service_map.keys()))
+service_options = list(service_map.keys())
+default_index = 0
+
+# Pre-select service if navigating from Services page
+if "prefill_service_id" in st.session_state:
+    for i, s in enumerate(services):
+        if s["service_id"] == st.session_state["prefill_service_id"]:
+            default_index = i
+            break
+
+selected_name = st.selectbox("🏷️ Select a Service", service_options, index=default_index)
 selected_service = service_map[selected_name]
 
 st.markdown("### Service Details")

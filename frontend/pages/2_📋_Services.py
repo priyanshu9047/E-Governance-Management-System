@@ -69,6 +69,8 @@ if services:
             else:
                 st.markdown("*No specific document requirements listed.*")
 
-            st.markdown(f"[📝 Apply for this service →](/Apply?service_id={svc['service_id']})")
+            if st.button("📝 Apply for this service", key=f"apply_{svc['service_id']}", use_container_width=True):
+                st.session_state["prefill_service_id"] = svc['service_id']
+                st.switch_page("pages/3_📝_Apply.py")
 else:
     st.info("No services found matching your filters.")
